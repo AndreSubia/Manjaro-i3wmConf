@@ -1,1 +1,1 @@
-# i3wmConf
+# Manjaro-i3wmConf
