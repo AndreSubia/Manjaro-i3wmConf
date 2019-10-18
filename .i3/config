@@ -14,10 +14,15 @@ default_floating_border normal
 # Hide borders
 hide_edge_borders none
 
+
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 2
 bindsym $mod+n border normal
+
+#No title screen
+for_window [class="^.*"] border pixel 2.5
+new_window 1pixel
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -64,13 +69,13 @@ bindsym $mod+F2 exec terminal -e ranger
 bindsym $mod+Shift+F2 exec pcmanfm
 bindsym $mod+F3 exec /opt/visual-studio-code/code
 bindsym $mod+F4 exec aseprite
-bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+F5 exec terminal -e 'padsp mocp'
 bindsym $mod+Shift+F5 exec terminal -e 'mocp -x'
 bindsym $mod+F10 exec arandr
 
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec -T-no-startup-id compton -b
+#bindsym $mod+t exec --no-startup-id pkill compton
+#bindsym $mod+Ctrl+t exec -T-no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -113,9 +118,9 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
+#bindsym $mod+h split h;exec notify-send 'tile horizontally'
+#bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+s split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -126,7 +131,7 @@ bindsym $mod+f fullscreen toggle
 #bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+d floating toggle
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
